@@ -19,7 +19,7 @@ def progress_callback(consumed_bytes, total_bytes):
 
 
 def get_filename(file, config):
-    current_time = datetime.datetime.now() if not config["utc_time"] else datetime.datetime.utcnow()
+    current_time = datetime.datetime.now() if not config["utc-time"] else datetime.datetime.utcnow()
     filename, extension = os.path.splitext(os.path.basename(file))
     params = {
         "uuid": str(uuid.uuid4()),
@@ -67,7 +67,7 @@ def upload_to_cos(file, config, typora):
         return None if typora else print(f"WARNING: Skipping Folder: {file}", file=sys.stderr)
 
     client = CosS3Client(CosConfig(
-        Region="accelerate" if config["oversea_upload"] else config["region"],
+        Region="accelerate" if config["oversea-upload"] else config["region"],
         SecretId=config["secret-id"],
         SecretKey=config["secret-key"]))
     key = get_filename(file, config)

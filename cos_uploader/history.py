@@ -19,11 +19,13 @@ def main():
     if year < 2000 or year > 2100 or month < 1 or month > 12:
         print("ERROR: Invalid Year or Month", file=sys.stderr)
         sys.exit(1)
+    year = str(year)
+    month = str(month).zfill(2)
 
     config = load_config()
-    file = os.path.join(config["base"], f"history-{args.year}-{args.month}.ndjson")
+    file = os.path.join(config["base"], f"history-{year}-{month}.log")
     if not os.path.exists(file):
-        print(f"ERROR: History File '{file}' Not Found, maybe you have not uploaded any files in {args.year}-{args.month}?", file=sys.stderr)
+        print(f"ERROR: History File '{file}' Not Found, maybe you have not uploaded any files in {year}-{month} ?", file=sys.stderr)
         sys.exit(1)
     
     lines = []

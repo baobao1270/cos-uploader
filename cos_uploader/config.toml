@@ -4,8 +4,8 @@ region = "ap-shanghai"
 bucket = "bucket-name-1250000000"
 prefix = "cos-uploader/v2/"
 filename = "{uuid}/{y}-{mo}-{d}-{h}-{min}-{s}-utc-{ts}/{name}{ext}"
-utc_time = true
-oversea_upload = false
+utc-time = true
+oversea-upload = false
 
 [domains]
 # domain types: cos, cdn, web, accelerate
