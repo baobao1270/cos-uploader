@@ -23,7 +23,7 @@ def main():
     month = str(month).zfill(2)
 
     config = load_config()
-    file = os.path.join(config["base"], f"history-{year}-{month}.log")
+    file = os.path.join(config["base"], f"history-{year}-{month}.ndjson")
     if not os.path.exists(file):
         print(f"ERROR: History File '{file}' Not Found, maybe you have not uploaded any files in {year}-{month} ?", file=sys.stderr)
         sys.exit(1)

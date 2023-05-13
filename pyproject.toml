@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cos-uploader"
-version = "2.0.0-rc.2"
+version = "2.0.0-rc.3"
 description = "CLI tool for uploading files to Tencent COS"
 authors = ["Joseph Chris <joseph@josephcz.xyz>"]
 license = "MIT"
